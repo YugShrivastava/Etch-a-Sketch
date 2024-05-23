@@ -73,5 +73,17 @@ resetGrid.addEventListener("click", () => {
 });
 
 randomColor.addEventListener("click", () => {
-    
-})
+  const divs = document.querySelectorAll(".divs");
+  divs.forEach((item) => {
+    item.addEventListener("mouseenter", (event) => {
+      event.target.style.backgroundColor =
+        "rgb(" +
+        Math.floor(Math.random() * 255) +
+        ", " +
+        Math.floor(Math.random() * 255) +
+        ", " +
+        Math.floor(Math.random() * 255) +
+        ")";
+    });
+  });
+});
