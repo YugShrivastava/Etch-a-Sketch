@@ -1,0 +1,35 @@
+body {
+  background-color: lightpink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.container {
+  border: 2px solid white;
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+button {
+  background-color: navy;
+  color: rgb(250, 245, 239);
+  font-weight: 800;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  padding: 5px 10px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  flex: 1 1 auto;
+}
