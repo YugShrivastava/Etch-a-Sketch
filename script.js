@@ -24,13 +24,9 @@ buttonDiv.appendChild(gridSizeButton);
 buttonDiv.appendChild(randomColor);
 buttonDiv.appendChild(resetGrid);
 
-gridSizeButton.addEventListener("click", (event) => {
-  gridNum = prompt("Enter a number: ");
-  widthAndHeight = 800 / gridNum - 2;
-  console.log(gridNum);
-  console.log(widthAndHeight);
-  createDivs(gridNum);
-});
+function deleteDivs(e) {
+  e.innerHTML = "";
+}
 
 function createDivs(num) {
   for (let i = 0; i < num * num; i++) {
@@ -53,3 +49,29 @@ divs.forEach((item) => {
     event.target.style.backgroundColor = "antiquewhite";
   });
 });
+
+gridSizeButton.addEventListener("click", (event) => {
+  gridNum = prompt("Enter a number: ");
+  widthAndHeight = 800 / gridNum - 2;
+  console.log(gridNum);
+  console.log(widthAndHeight);
+  deleteDivs(container);
+  createDivs(gridNum);
+  const divs = document.querySelectorAll(".divs");
+  divs.forEach((item) => {
+    item.addEventListener("mouseenter", (event) => {
+      event.target.style.backgroundColor = "antiquewhite";
+    });
+  });
+});
+
+resetGrid.addEventListener("click", () => {
+  const divs = document.querySelectorAll(".divs");
+  divs.forEach((item) => {
+    item.style.backgroundColor = "lightpink";
+  });
+});
+
+randomColor.addEventListener("click", () => {
+    
+})
